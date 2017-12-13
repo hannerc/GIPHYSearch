@@ -1,14 +1,14 @@
-var topics = ["Christmas", "Halloween", "Rocky Horror", "The Lion King", "Blackbird", "iPhone", "Dame Edna", "Equality", "Castro", "San Francisco", "Star Trek"];
+var topics = ["Christmas", "Halloween", "Rocky Horror", "The Lion King", "Blackbird", "iPhone", "Dame Edna", "Equality", "Castro", "San Francisco", "Star Trek", "Cheetos"];
 
 
 function gifSearch(){
-      // Grabbing and storing the data-animal property value from the button
+      //this gets the value of the button created from the input form
       var topic = $(this).attr("button-value");
       console.log(topic);
-      // Constructing a queryURL using the animal name
+      //queryURL using the topic name
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         topic + "&api_key=dc6zaTOxFJmzC&limit=10";
-      // Performing an AJAX request with the queryURL
+      // AJAX request with the queryURL
       $.ajax({
           url: queryURL,
           method: "GET"
@@ -17,7 +17,7 @@ function gifSearch(){
         .done(function(response) {
           console.log(queryURL);
           console.log(response);
-          // storing the data from the AJAX request in the results variable
+        
           var results = response.data;
           // Looping through each result item
           for (var i = 0; i < results.length; i++) {
@@ -38,11 +38,11 @@ function gifSearch(){
               topicImage.attr("data-still", results[i].images.fixed_height_still.url)  
               topicImage.addClass("gif");
               topicImage.bind('click', pauseGif);
-            
-            topicDiv.append(p);
-            topicDiv.append(topicImage);
-            
-            // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+
+              topicDiv.append(topicImage);
+              topicDiv.append(p);
+
+            // Prependng the topicDiv to the HTML page in the "#gifs-appear-here" div
             $("#gifs-appear-here").prepend(topicDiv);
           }
         });
@@ -75,9 +75,7 @@ function gifSearch(){
         // This line grabs the input from the textbox
         var newTopic = $("#topic-input").val().trim();
         
-        topics.push(newTopic);//pushes the user input topic into the array
-        
-       
+        topics.push(newTopic);//pushes the user input topic into the array 
         renderButtons();
       });
       
