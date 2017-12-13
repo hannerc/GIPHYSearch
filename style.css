@@ -1,0 +1,44 @@
+
+button{
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.container{
+  background-color: yellow;
+  border-radius: 35px;
+}
+
+.gifsDisplay{
+  margin:auto;
+  color:black;
+  text-align: center;
+  width: 250px;
+  margin:20px;
+  display: inline-block;
+}
+
+p{
+  font-size:20px;
+  background-color: magenta;
+  border-radius: 10px;
+  border: 2px solid black;
+  color:white;
+}
+
+.input{
+  border-radius: 5px;
+}
+
+.gif{
+  width: 100%;
+  border-radius: 35px;
+}
+
+#topics-form{
+  margin:25px;
+  border-radius: 10px;
+  background-color: silver;
+  padding:10px;
+  float:right;
+ }
