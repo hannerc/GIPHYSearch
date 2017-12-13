@@ -1,7 +1,8 @@
-var topics = ["Christmas", "Halloween", "Rocky Horror", "The Lion King", "Blackbird", "iPhone", "Dame Edna", "Equality", "Castro", "San Francisco", "Star Trek", "Cheetos"];
+var topics = ["Christmas", "Halloween", "Rocky Horror", "The Lion King", "Blackbird", "iPhone", "Dame Edna", "Equality", "Castro", "San Francisco", "Star Trek", "Cheetos", "Australia"];
 
 
 function gifSearch(){
+   $("#gifs-appear-here").empty();
       //this gets the value of the button created from the input form
       var topic = $(this).attr("button-value");
       console.log(topic);
@@ -24,9 +25,6 @@ function gifSearch(){
             // Creating and storing a div tag
             var topicDiv = $("<div>");
             topicDiv.addClass("gifsDisplay");
-
-            var clearDiv = $("<div>");
-            clearDiv.addClass("clearDiv");
             // Creating a paragraph tag with the result item's rating
             var p = $("<p>").text("Rating: " + results[i].rating);
             // Creating and storing an image tag
@@ -49,6 +47,7 @@ function gifSearch(){
 };
 
  function renderButtons() {
+       
         // Deleting the buttons prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
